@@ -1,9 +1,10 @@
 package org.arochat.graphReducer.step.handler;
 
+import java.util.TimerTask;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 
-public class ExecutedTasksPoller<O> implements Runnable {
+public class ExecutedTasksPoller<O> extends TimerTask {
 
 	private final BlockingQueue<O> nextBlockingQueue;
 	private final BlockingQueue<O> outBlockingQueue;
@@ -19,6 +20,7 @@ public class ExecutedTasksPoller<O> implements Runnable {
 	@Override
 	public void run() {
 		// TODO poll outgoing tasks and put them in outBlockingQueue
+		System.out.println("polling executed tasks");
 
 	}
 
